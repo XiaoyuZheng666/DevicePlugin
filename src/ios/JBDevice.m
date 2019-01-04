@@ -22,7 +22,7 @@
 #include "TargetConditionals.h"
 
 #import <Cordova/CDV.h>
-#import "CDVDevice.h"
+#import "JBDevice.h"
 #import <AdSupport/AdSupport.h>
 #import "SAMKeychain.h"
 
@@ -47,10 +47,10 @@
 
 @end
 
-@interface CDVDevice () {}
+@interface JBDevice () {}
 @end
 
-@implementation CDVDevice
+@implementation JBDevice
 
 - (NSString*)getIdfaString{
     

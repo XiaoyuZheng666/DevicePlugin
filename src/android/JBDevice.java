@@ -30,8 +30,8 @@ import org.json.JSONObject;
 
 import android.provider.Settings;
 
-public class Device extends CordovaPlugin {
-    public static final String TAG = "Device";
+public class JBDevice extends CordovaPlugin {
+    public static final String TAG = "JBDevice";
 
     public static String platform;                            // Device OS
     public static String uuid;                                // Device UUID
@@ -43,7 +43,7 @@ public class Device extends CordovaPlugin {
     /**
      * Constructor.
      */
-    public Device() {
+    public JBDevice() {
     }
 
     /**
@@ -55,7 +55,7 @@ public class Device extends CordovaPlugin {
      */
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
-        Device.uuid = getUuid();
+        JBDevice.uuid = getUuid();
     }
 
     /**
@@ -69,7 +69,7 @@ public class Device extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if ("getDeviceInfo".equals(action)) {
             JSONObject r = new JSONObject();
-            r.put("uniqueid", Device.uuid);
+            r.put("uniqueid", JBDevice.uuid);
             r.put("version", this.getOSVersion());
             r.put("platform", this.getPlatform());
             r.put("model", this.getModel());

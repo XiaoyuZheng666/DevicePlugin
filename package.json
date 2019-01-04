@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-jb-device",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "Cordova Device Plugin",
   "types": "./types/index.d.ts",
   "cordova": {
@@ -22,16 +22,13 @@
     "device",
     "ecosystem:cordova",
     "cordova-android",
-    "cordova-ios",
-    "cordova-windows",
-    "cordova-browser",
-    "cordova-osx"
+    "cordova-ios"
   ],
   "scripts": {
     "test": "npm run eslint",
     "eslint": "node node_modules/eslint/bin/eslint www && node node_modules/eslint/bin/eslint src && node node_modules/eslint/bin/eslint tests"
   },
-  "author": "Apache Software Foundation",
+  "author": "xiaoyuZheng",
   "license": "Apache-2.0",
   "engines": {
     "cordovaDependencies": {

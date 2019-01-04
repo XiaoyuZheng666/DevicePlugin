@@ -22,47 +22,45 @@
     xmlns:rim="http://www.blackberry.com/ns/widgets"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-plugin-jb-device"
-    version="1.0.1">
-    <name>Device</name>
+    version="1.0.4">
+    <name>JBDevice</name>
     <description>Cordova Device Plugin</description>
     <license>Apache 2.0</license>
     <keywords>cordova,device</keywords>
     <repo>https://github.com/XiaoyuZheng666/DevicePlugin.git</repo>
     <issue>https://github.com/XiaoyuZheng666/DevicePlugin/issues</issue>
 
-    <js-module src="www/device.js" name="device">
-        <clobbers target="device" />
+    <js-module src="www/jbdevice.js" name="jbdevice">
+        <clobbers target="jbdevice" />
     </js-module>
 
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="Device" >
-                <param name="android-package" value="org.apache.cordova.device.Device"/>
+            <feature name="JBDevice" >
+                <param name="android-package" value="org.apache.cordova.device.JBDevice"/>
             </feature>
         </config-file>
 
-        <source-file src="src/android/Device.java" target-dir="src/org/apache/cordova/device" />
+        <source-file src="src/android/JBDevice.java" target-dir="src/org/apache/cordova/device" />
     </platform>
 
     <!-- ios -->
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
-            <feature name="Device">
-                <param name="ios-package" value="CDVDevice"/>
+            <feature name="JBDevice">
+                <param name="ios-package" value="JBDevice"/>
             </feature>
         </config-file>
 
-        <header-file src="src/ios/CDVDevice.h" />
-        <source-file src="src/ios/CDVDevice.m" />
+        <header-file src="src/ios/JBDevice.h" />
+        <source-file src="src/ios/JBDevice.m" />
 
         <header-file src="src/ios/SAMKeychain.h" />
         <source-file src="src/ios/SAMKeychain.m" />
 
         <header-file src="src/ios/SAMKeychainQuery.h" />
         <source-file src="src/ios/SAMKeychainQuery.m" />
-
-        
 
         <framework src="Security.framework" />
 

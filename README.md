@@ -1,29 +1,9 @@
 ---
-title: Device
+title: JBDevice
 description: Get device information.
 ---
-<!--
-# license: Licensed to the Apache Software Foundation (ASF) under one
-#         or more contributor license agreements.  See the NOTICE file
-#         distributed with this work for additional information
-#         regarding copyright ownership.  The ASF licenses this file
-#         to you under the Apache License, Version 2.0 (the
-#         "License"); you may not use this file except in compliance
-#         with the License.  You may obtain a copy of the License at
-#
-#           http://www.apache.org/licenses/LICENSE-2.0
-#
-#         Unless required by applicable law or agreed to in writing,
-#         software distributed under the License is distributed on an
-#         "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-#         KIND, either express or implied.  See the License for the
-#         specific language governing permissions and limitations
-#         under the License.
--->
 
-|AppVeyor|Travis CI|
-|:-:|:-:|
-|[![Build status](https://ci.appveyor.com/api/projects/status/github/apache/cordova-plugin-device?branch=master)](https://ci.appveyor.com/project/ApacheSoftwareFoundation/cordova-plugin-device)|[![Build Status](https://travis-ci.org/apache/cordova-plugin-device.svg?branch=master)](https://travis-ci.org/apache/cordova-plugin-device)|
+基于cordova-plugin-device 2.0.3-dev版本修改
 
 # cordova-plugin-jb-device
 
@@ -43,14 +23,14 @@ function onDeviceReady() {
 
 ## Properties
 
-- device.cordova
-- device.model
-- device.platform
-- device.uniqueid
-- device.version
-- device.manufacturer
-- device.isVirtual
-- device.idfa
+- jbdevice.cordova
+- jbdevice.model
+- jbdevice.platform
+- jbdevice.uniqueid
+- jbdevice.version
+- jbdevice.manufacturer
+- jbdevice.isVirtual
+- jbdevice.idfa
 
 ## device.cordova
 
@@ -85,19 +65,19 @@ different across versions of the same product.
 // iOS:     for the iPad Mini, returns iPad2,5; iPhone 5 is iPhone 5,1. See http://theiphonewiki.com/wiki/index.php?title=Models
 // OSX:                        returns "x86_64"
 //
-var model = device.model;
+var model = jbdevice.model;
 ```
 
 ### Android Quirks
 
 - Gets the [product name](http://developer.android.com/reference/android/os/Build.html#PRODUCT) instead of the [model name](http://developer.android.com/reference/android/os/Build.html#MODEL), which is often the production code name. For example, the Nexus One returns `Passion`, and Motorola Droid returns `voles`.
 
-## device.platform
+## jbdevice.platform
 
 Get the device's operating system name.
 
 ```js
-var string = device.platform;
+var string = jbdevice.platform;
 ```
 ### Supported Platforms
 
@@ -116,10 +96,10 @@ var string = device.platform;
 //   - "WinCE"
 //   - "Tizen"
 //   - "Mac OS X"
-var devicePlatform = device.platform;
+var devicePlatform = jbdevice.platform;
 ```
 
-## device.uniqueid
+## jbdevice.uniqueid
 
 Get the device's Universally Unique Identifier ([UUID](http://en.wikipedia.org/wiki/Universally_Unique_Identifier)).
 
@@ -164,11 +144,11 @@ The UUID will be the same if app is restored from a backup or iCloud as it is sa
 
 The `uuid` on OSX is generated automatically if it does not exist yet and is stored in the `standardUserDefaults` in the `CDVUUID` property.
 
-## device.version
+## jbdevice.version
 
 Get the operating system version.
 
-    var string = device.version;
+    var string = jbdevice.version;
 
 ### Supported Platforms
 
@@ -199,11 +179,11 @@ Get the operating system version.
 var deviceVersion = device.version;
 ```
 
-## device.manufacturer
+## jbdevice.manufacturer
 
 Get the device's manufacturer.
 
-    var string = device.manufacturer;
+    var string = jbdevice.manufacturer;
 
 ### Supported Platforms
 
@@ -218,15 +198,15 @@ Get the device's manufacturer.
 // BlackBerry: returns "BlackBerry"
 // iPhone:     returns "Apple"
 //
-var deviceManufacturer = device.manufacturer;
+var deviceManufacturer = jbdevice.manufacturer;
 ```
 
-## device.isVirtual
+## jbdevice.isVirtual
 
 whether the device is running on a simulator.
 
 ```js
-var isSim = device.isVirtual;
+var isSim = jbdevice.isVirtual;
 ```
 
 ### Supported Platforms
@@ -238,12 +218,12 @@ var isSim = device.isVirtual;
 
 The `isVirtual` property on OS X and Browser always returns false.
 
-## device.idfa
+## jbdevice.idfa
 
 Get the device hardware idfa 
 
 ```js
-var string = device.idfa;
+var string = jbdevice.idfa;
 ```
 
 ### Supported Platforms
