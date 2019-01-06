@@ -22,7 +22,7 @@
     xmlns:rim="http://www.blackberry.com/ns/widgets"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-plugin-jb-device"
-    version="1.0.5">
+    version="1.0.6">
     <name>JBDevice</name>
     <description>Cordova Device Plugin</description>
     <license>Apache 2.0</license>
@@ -30,8 +30,8 @@
     <repo>https://github.com/XiaoyuZheng666/DevicePlugin.git</repo>
     <issue>https://github.com/XiaoyuZheng666/DevicePlugin/issues</issue>
 
-    <js-module src="www/jbdevice.js" name="jbdevice">
-        <clobbers target="jbdevice" />
+    <js-module src="www/JBDevice.js" name="JBDevice">
+        <clobbers target="cordova.plugins.JBDevice" />
     </js-module>
 
     <!-- android -->

@@ -30,7 +30,7 @@
 #define kKeychainService @"com.zhaoyin.hjx"
 
 
-@implementation UIDevice (ModelVersion)
+@implementation UIDevice (JBModelVersion)
 
 - (NSString*)modelVersion
 {

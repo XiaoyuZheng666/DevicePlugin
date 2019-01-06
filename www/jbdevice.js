@@ -1,3 +1,4 @@
+cordova.define("cordova-plugin-jb-device.jbdevice", function(require, exports, module) {
 /*
  *
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -19,57 +20,9 @@
  *
 */
 
-var argscheck = require('cordova/argscheck');
-var channel = require('cordova/channel');
-var utils = require('cordova/utils');
 var exec = require('cordova/exec');
-var cordova = require('cordova');
 
-channel.createSticky('onCordovaInfoReady');
-// Tell cordova channel to wait on the CordovaInfoReady event
-channel.waitForInitialization('onCordovaInfoReady');
-
-/**
- * This represents the mobile device, and provides properties for inspecting the model, version, UUID of the
- * phone, etc.
- * @constructor
- */
 function JBDevice () {
-    this.available = false;
-    this.platform = null;
-    this.version = null;
-    this.uniqueid = null;
-    this.cordova = null;
-    this.model = null;
-    this.manufacturer = null;
-    this.isVirtual = null;
-    this.serial = null;
-    this.idfa = null;
-
-
-    var me = this;
-
-    channel.onCordovaReady.subscribe(function () {
-        me.getInfo(function (info) {
-            // ignoring info.cordova returning from native, we should use value from cordova.version defined in cordova.js
-            // TODO: CB-5105 native implementations should not return info.cordova
-            var buildLabel = cordova.version;
-            me.available = true;
-            me.platform = info.platform;
-            me.version = info.version;
-            me.uniqueid = info.uniqueid;
-            me.cordova = buildLabel;
-            me.model = info.model;
-            me.isVirtual = info.isVirtual;
-            me.manufacturer = info.manufacturer || 'unknown';
-            me.serial = info.serial || 'unknown';
-            me.idfa = info.idfa || 'unknown';
-            channel.onCordovaInfoReady.fire();
-        }, function (e) {
-            me.available = false;
-            utils.alert('[ERROR] Error initializing Cordova: ' + e);
-        });
-    });
 }
 
 /**
@@ -78,9 +31,10 @@ function JBDevice () {
  * @param {Function} successCallback The function to call when the heading data is available
  * @param {Function} errorCallback The function to call when there is an error getting the heading data. (OPTIONAL)
  */
-Device.prototype.getInfo = function (successCallback, errorCallback) {
-    argscheck.checkArgs('fF', 'JBDevice.getInfo', arguments);
+JBDevice.prototype.getInfo = function (successCallback, errorCallback) {
     exec(successCallback, errorCallback, 'JBDevice', 'getDeviceInfo', []);
 };
 
 module.exports = new JBDevice();
+
+});
