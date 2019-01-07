@@ -68,6 +68,9 @@ public class JBDevice extends CordovaPlugin {
      */
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if ("getDeviceInfo".equals(action)) {
+
+            String cordovaStr = args.getString(0);
+
             JSONObject r = new JSONObject();
             r.put("uniqueid", JBDevice.uuid);
             r.put("version", this.getOSVersion());
@@ -76,6 +79,8 @@ public class JBDevice extends CordovaPlugin {
             r.put("manufacturer", this.getManufacturer());
 	        r.put("isVirtual", this.isVirtual());
             r.put("serial", this.getSerialNumber());
+            r.put("cordovaVersion", cordovaStr);
+
             callbackContext.success(r);
         }
         else {

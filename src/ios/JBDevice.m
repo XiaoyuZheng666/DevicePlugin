@@ -106,7 +106,7 @@
              @"platform": @"iOS",
              @"version": [device systemVersion],
              @"uniqueid": [self getDeviceId],
-             @"cordova": [[self class] cordovaVersion],
+             @"cordovaVersion": [[self class] cordovaVersion],
              @"isVirtual": @([self isVirtual]),
              @"idfa": [self getIdfaString]
              };

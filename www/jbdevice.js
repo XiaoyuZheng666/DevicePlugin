@@ -1,4 +1,3 @@
-cordova.define("cordova-plugin-jb-device.JBDevice", function(require, exports, module) {
 /*
  *
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -21,8 +20,10 @@ cordova.define("cordova-plugin-jb-device.JBDevice", function(require, exports, m
 */
 
 var exec = require('cordova/exec');
+var cordova = require('cordova');
 
 function JBDevice () {
+	
 }
 
 /**
@@ -32,9 +33,9 @@ function JBDevice () {
  * @param {Function} errorCallback The function to call when there is an error getting the heading data. (OPTIONAL)
  */
 JBDevice.prototype.getInfo = function (successCallback, errorCallback) {
-    exec(successCallback, errorCallback, 'JBDevice', 'getDeviceInfo', []);
-};
+     
+     var buildLabel = cordova.version;
+
+    exec(successCallback, errorCallback, 'JBDevice', 'getDeviceInfo', [buildLabel]);};
 
 module.exports = new JBDevice();
-
-});
