@@ -27,4 +27,6 @@
 
 - (void)getDeviceInfo:(CDVInvokedUrlCommand*)command;
 
+- (NSDictionary*)deviceProperties;
+
 @end
